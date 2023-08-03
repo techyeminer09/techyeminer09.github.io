@@ -2,17 +2,112 @@
 <html lang="en">
 
 <head>
-    <!-- ... Your existing head content ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #333333;
+            border-radius: 5px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills li {
+            margin-bottom: 10px;
+        }
+
+        .theme-switch-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333333;
+            color: #ffffff;
+            font-size: 12px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ... Your existing body content ... -->
+    <button class="theme-switch-btn" onclick="toggleDarkMode()">Switch to Light Theme</button>
 
-    <button class="theme-switch-btn" onclick="toggleDarkMode()">Switch to Dark Theme</button>
+    <div class="container">
+        <header>
+            <h1>Welcome to My About Me Page</h1>
+        </header>
 
-    <footer>
-        <p>&copy; 2023 techyeminer09. All rights reserved.</p>
-    </footer>
+        <section>
+            <h2>About Me</h2>
+            <p>Hello, my name is <strong>techyeminer09</strong>. I am a high school student based on Earth. I have a passion for gaming, 3D design, and coding.</p>
+            <p>I currently own 3 devices: a Samsung A13 running Android, a 2013 MacBook Air running Windows 10 Pro for workstations, and a Dell Optiplex 9020 running Windows 10 Pro.</p>
+        </section>
+
+        <section>
+            <h2>History</h2>
+            <p>My most used device is probably my MacBook as I use it at school. My school prefers students to use macOS for security reasons. However, the school has a restrictive software called Jamf installed on Macs, which can monitor or even start a local server on your computer. Due to this, I switched to using Fedora 38 for a while, but unfortunately, the school doesn't have Linux WIFI certificates, so I couldn't use the school WIFI. Since Mac and Windows don't require certificates and there's an exploit on the redirect site to bypass certificate installation, I am currently running Windows 10 natively. I also can't use macOS anymore due to the 32-bit support drop, which means I can't play Portal or Half-Life.</p>
+        </section>
+
+        <section class="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>3D design (Blender, Maya, and Fusion)</li>
+                <li>Programming (Python)</li>
+                <li>Gaming (HL Portal TF2 MC CS or anything popular)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch with me, feel free to reach out via Matrix at @gordon_freeman69420:matrix.org</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 techyeminer09. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script>
         function toggleDarkMode() {
@@ -22,11 +117,9 @@
             const isDarkMode = body.classList.contains('dark-mode');
             btn.textContent = isDarkMode ? 'Switch to Light Theme' : 'Switch to Dark Theme';
 
-            // Save the user's dark mode preference in local storage
             localStorage.setItem('darkMode', isDarkMode);
         }
 
-        // Check if the user had previously set the dark mode preference
         const isDarkModeSaved = localStorage.getItem('darkMode');
         if (isDarkModeSaved === 'true') {
             document.body.classList.add('dark-mode');
