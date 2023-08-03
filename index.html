@@ -7,7 +7,7 @@
     <title>About Me</title>
     <style>
         body {
-            background: linear-gradient(45deg, #b700ff, #FF0090, #ff0077);
+            background: linear-gradient(45deg, #9900ff, #FF0090, #ff009d);
             font-family: Arial, sans-serif;
             color: #333333;
             margin: 0;
@@ -97,9 +97,10 @@
 
     <script>
         function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
+            const body = document.body;
+            body.classList.toggle('dark-mode');
             const btn = document.querySelector('.theme-switch-btn');
-            btn.textContent = document.body.classList.contains('dark-mode') ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+            btn.textContent = body.classList.contains('dark-mode') ? 'Switch to Light Theme' : 'Switch to Dark Theme';
         }
     </script>
 </body>
