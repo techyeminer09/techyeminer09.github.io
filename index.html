@@ -7,25 +7,48 @@
     <title>About Me</title>
     <style>
         body {
-            background-color: #f0f0f000;
+            background: linear-gradient(45deg, #004080, #FF0090, #800000);
             font-family: Arial, sans-serif;
-            color: #ffffff;
+            color: #333333;
             margin: 0;
             padding: 0;
         }
 
+        body.dark-mode {
+            background: #333333;
+            color: #f0f0f0;
+        }
+
         body, p, h1, h2, h3, h4, h5, h6 {
-            color: #ffffff;
+            color: inherit;
         }
 
         .professional-border {
             padding: 20px;
-            background-color: #000000;
-            border: 2px solid #000000;
+            background-color: #f5f5f5;
+            border: 2px solid #e6e6e6;
         }
 
         section {
             background-color: transparent;
+        }
+
+        .theme-switch-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #004080;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .theme-switch-btn.dark-mode {
+            background-color: #f0f0f0;
+            color: #333333;
         }
     </style>
 </head>
@@ -61,9 +84,19 @@
         <p>If you'd like to get in touch with me, feel free to reach out via Matrix at @gordon_freeman69420:matrix.org</p>
     </section>
 
+    <button class="theme-switch-btn" onclick="toggleDarkMode()">Switch to Dark Theme</button>
+
     <footer>
         <p>&copy; 2023 techyeminer09. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.querySelector('.theme-switch-btn');
+            btn.textContent = document.body.classList.contains('dark-mode') ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+        }
+    </script>
 </body>
 
 </html>
