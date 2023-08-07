@@ -46,9 +46,11 @@ function displayResults(results) {
         const resultElement = document.createElement('div');
         resultElement.className = 'result';
         resultElement.innerHTML = `
-            <img src="${videoThumbnail}" alt="${videoTitle}">
-            <p>${videoTitle}</p>
-            <button onclick="playSong('${videoId}')">Play</button>
+            <div class="result-info">
+                <img src="${videoThumbnail}" alt="${videoTitle}">
+                <p>${videoTitle}</p>
+            </div>
+            <button class="play-button" onclick="playSong('${videoId}')">Play</button>
         `;
 
         searchResultsDiv.appendChild(resultElement);
@@ -57,4 +59,5 @@ function displayResults(results) {
 
 function playSong(videoId) {
     player.loadVideoById(videoId);
+    document.getElementById('player').style.display = 'block';
 }
