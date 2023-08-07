@@ -4,58 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>About Me</title>
-    <style>
-        body {
-            background-color: #333333;
-            font-family: "Menlo", monospace;
-            color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-        }
-
-        section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #444444;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            color: #ffffff;
-            margin-top: 0;
-        }
-
-        .skills ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .skills li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #444444;
-            color: #999999;
-            font-size: 12px;
-        }
-    </style>
 </head>
 
 <body>
@@ -89,10 +39,21 @@
             <p>If you'd like to get in touch with me, feel free to reach out via Matrix at @gordon_freeman69420:matrix.org</p>
         </section>
 
-        <footer>
-            <p>&copy; 2023 techyeminer09. All rights reserved.</p>
-        </footer>
+        <section class="yt-player">
+            <h2>YouTube Music Player</h2>
+            <input type="text" id="searchInput" placeholder="Search for songs">
+            <button id="searchButton">Search</button>
+            <div id="player"></div>
+            <div id="searchResults"></div>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2023 techyeminer09. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
