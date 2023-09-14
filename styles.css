@@ -1,9 +1,10 @@
 body {
-    background-color: #10300a;
+    background-image: repeating-linear-gradient(#1e5d11, rgba(11, 151, 51, 0.933));
     font-family: "Menlo", sans-serif;
     color: #000000;
     margin: 0;
     padding: 0;
+    text-shadow: #000000;
 }
 
 .container {
